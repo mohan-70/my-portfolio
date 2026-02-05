@@ -71,7 +71,13 @@ a:hover { color: var(--accent); }
     transition: 0.4s ease;
 }
 
-.skill-card:hover { transform: translateY(-8px); border-color: var(--accent); background: #1c1c21; }
+.skill-card:hover {
+    transform: scale(1.1) rotate(2deg);
+    background: #1c1c21;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+    cursor: pointer;
+}
 .skill-card i { font-size: 45px; color: var(--accent); margin-bottom: 15px; display: block; }
 
 .project-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 0 10%; }
@@ -117,3 +123,35 @@ footer {
 .socials { display: flex; justify-content: center; gap: 25px; margin: 25px 0; }
 .socials i { font-size: 1.5rem; }
 .credit { font-size: 0.8rem; color: #555; margin-top: 30px; }
+
+/* Pulsing effect for the highlight text */
+.highlight {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+    to { text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+}
+
+/* Float animation for the terminal box */
+.terminal {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
