@@ -6,6 +6,23 @@
     --nav-bg: rgba(10, 10, 12, 0.95);
 }
 
+/* Light Theme Variables */
+.light-theme {
+    --bg: #f4f4f9;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #0077cc; /* A deeper blue for better contrast on white */
+    --nav-bg: rgba(244, 244, 249, 0.95);
+}
+
+/* Toggle Button Styling */
+#theme-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: 0.3s;
+}
+
 * { box-sizing: border-box; }
 
 body {

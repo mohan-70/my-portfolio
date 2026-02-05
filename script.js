@@ -39,3 +39,28 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+// Theme toggle logic
+const themeIcon = document.getElementById("theme-icon");
+
+themeIcon.onclick = function() {
+    document.body.classList.toggle("light-theme");
+
+    // Change icon between moon and sun
+    if(document.body.classList.contains("light-theme")) {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+        localStorage.setItem("theme", "light");
+    } else {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+// Check for saved theme on page load
+if(localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+}
